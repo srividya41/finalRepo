@@ -2,6 +2,13 @@
 import { someFunction } from './ai-agent.js';
 import { useState } from 'react'
  
+async function getServerSideProps() {
+  const data = JSON.stringify({ time: new Date() });
+  return { props: { data } };
+}
+
+
+ 
 export default function Form() {
   const [selectedInput, setSelectedInput] = useState('');
   const [file, setFile] = useState(null);
